@@ -441,3 +441,18 @@
       label  : Starting Text
       type   : textarea
       value  : default text
+-
+  title  : Long Answer
+  fields :
+    id:
+      label  : ID / Name
+      type   : input
+      value  : textarea
+    label:
+      label  : Label Text
+      type   : input
+      value  : Long Answer
+    textarea:
+      label  : Starting Text
+      type   : textarea
+      value  : default text
