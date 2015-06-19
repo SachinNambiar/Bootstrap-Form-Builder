@@ -36,7 +36,7 @@ define([
         , content: renderTab
       });
       new TabView({
-        title: "About"
+        title: "Preview"
         , content: aboutTab
       });
 

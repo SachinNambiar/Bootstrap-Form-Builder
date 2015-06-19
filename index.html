@@ -12,8 +12,10 @@
   <link href="assets/css/custom.css" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
 
+  <![endif]-->
+  <script src="http://code.jquery.com/jquery-latest.min.js"
+          type="text/javascript"></script>
   <link rel="shortcut icon" href="images/favicon.ico">
   <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
   <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
@@ -29,12 +31,15 @@
     </div>
   </div>
 </div>
+
 <div class="container">
   <div class="row clearfix">
     <!-- Building Form. -->
     <div class="span6">
       <div class="clearfix">
         <h2>Your Form</h2>
+        <button  onclick="getJSON();">Get JSON</button>
+        <button  onclick="preview();">Preview</button>
         <hr>
         <div id="build">
           <form id="target" class="form-horizontal">
@@ -63,14 +68,8 @@
     </div>
     <!-- / Components -->
 
-  </div>
-  <div class="row clearfix">
-    <div class="span12">
-      <hr>
-      <button  onclick="getJSON();">Get JSON</button>
-      <textarea class="span6" rows="20" id="txtJSON"  name="txtJSON"></textarea>
-    </div>
-  </div>
+
+
   <div class="row clearfix">
     <div class="span12">
       <hr>
@@ -78,16 +77,23 @@
       Source on (<a href="https://github.com/minikomi/Bootstrap-Form-Builder" >Github</a>).
     </div>
   </div>
-
 </div> <!-- /container -->
 
 <script data-main="assets/js/main-built.js" src="assets/js/lib/require.js" ></script>
 <script>
+
   function getJSON()
   {
     var json=JSON.stringify($("#render").val());
-    $("#txtJSON").val(json);
+    $("#preview").text(json)
     return false;
+  }
+
+  function preview()
+  {
+    var html= $("#render").val()
+    $("#preview").html(html)
+
   }
 </script>
 </body>
